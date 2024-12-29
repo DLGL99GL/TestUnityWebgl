@@ -116,6 +116,17 @@
         });
       };
       document.body.appendChild(script);
+	  
+	      function isMobileDevice() {
+        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    function forceLandscape() {
+        if (isMobileDevice()) {
+            screen.orientation.lock('landscape - primary');
+        }
+    }
+    window.addEventListener('load', forceLandscape);
+	  
     </script>
   </body>
 </html>
